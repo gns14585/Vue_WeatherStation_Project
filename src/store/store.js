@@ -1,9 +1,11 @@
 import { createStore } from "vuex";
 
+// OpenWeather API 키 가져오기
 const apiKey = import.meta.env.VITE_API_KEY;
 
 // store 만들기
 export default createStore({
+  // state: 상태 저장소
   state: {
     // initial state
     count: 0,
@@ -16,8 +18,9 @@ export default createStore({
     },
     toggle: false, // true일때 about 보여주기
   },
+
+  // 상태 변경하는곳 (commit)
   mutations: {
-    // mutations(데이터 변경)
     addCount(state, palyload) {
       state.count += 1 + palyload;
     },
@@ -39,6 +42,8 @@ export default createStore({
     },
   },
 
+  // actions: mutations과 유사하지만 비동기 작업 처리하는곳 그 결과를 mutations에 커밋하여 상태변경
+  // ex) api호출 등
   actions: {
     // 날씨 데이터 가져오기
     // context : 전역객체 , 해당하는 변수를 가져와서 스테이트를 참조할 수 있음
