@@ -1,18 +1,20 @@
 <template>
   <div class="weather-info">
+    <p>{{ $store.state.weatherData.icon }}</p>
     <div class="icon">
       <img
-        :src="`https://openweathermap.org/img/wn/${props.weatherData.icon}@2x.png`"
+        :src="`https://openweathermap.org/img/wn/${$store.state.weatherData.icon}@2x.png`"
         :alt="props.weatherData.icon"
       />
     </div>
     <!-- 오픈웨더의 온도는 켈빈온도라서 변경해야하는데, lang=kr&untis=metric 로 변경해줘도 되고, 또는 -273.15 해주면됨-->
     <div class="temp">
-      {{ (props.weatherData.temp - 273.15).toFixed(1) }}&deg;
+      {{ ($store.state.weatherData.temp - 273.15).toFixed(1) }}&deg;
     </div>
-    <div class="text">{{ props.weatherData.text }}</div>
+    <div class="text">{{ $store.state.weatherData.text }}</div>
     <div class="location">
-      {{ props.weatherData.city }}, {{ props.weatherData.location }}
+      {{ $store.state.weatherData.city }},
+      {{ $store.state.weatherData.location }}
     </div>
   </div>
 </template>

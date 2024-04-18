@@ -47,6 +47,7 @@ const onSearchCity = (city) => {
 </script>
 
 <template>
+  <button @click="$store.dispatch('getWeather')">getWeather</button>
   <Navbar />
   <MainComp :weatherData="weatherData" @onSearchCity="onSearchCity" />
 </template>

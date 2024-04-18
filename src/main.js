@@ -12,8 +12,12 @@ import {
   faLocationDot,
   faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
+import store from "./store/store.js";
 
 // 아이콘 등록하기
 library.add(faBarsStaggered, faLocationDot, faMagnifyingGlass);
 
-createApp(App).component("font-awesome-icon", FontAwesomeIcon).mount("#app");
+createApp(App)
+  .use(store)
+  .component("font-awesome-icon", FontAwesomeIcon)
+  .mount("#app");
