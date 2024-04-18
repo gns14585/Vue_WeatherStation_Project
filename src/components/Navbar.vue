@@ -1,6 +1,8 @@
 <template>
   <nav class="navbar">
-    <button class="toggle">toggle</button>
+    <button class="toggle">
+      <font-awesome-icon class="icon" :icon="['fas', 'bars-staggered']" />
+    </button>
   </nav>
 </template>
 
@@ -13,5 +15,16 @@
   padding: 20px;
   display: flex;
   justify-content: end;
+
+  button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .icon {
+    color: #333;
+    font-size: 24px;
+  }
 }
 </style>
