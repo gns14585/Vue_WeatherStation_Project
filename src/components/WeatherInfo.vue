@@ -4,7 +4,7 @@
     <div class="icon">
       <img
         :src="`https://openweathermap.org/img/wn/${$store.state.weatherData.icon}@2x.png`"
-        :alt="props.weatherData.icon"
+        :alt="$store.state.weatherData.icon"
       />
     </div>
     <!-- 오픈웨더의 온도는 켈빈온도라서 변경해야하는데, lang=kr&untis=metric 로 변경해줘도 되고, 또는 -273.15 해주면됨-->
@@ -19,12 +19,7 @@
   </div>
 </template>
 
-<script setup>
-const props = defineProps({
-  weatherData: Object,
-});
-console.log(props.weatherData);
-</script>
+<script setup></script>
 
 <style lang="scss" scoped>
 .weather-info {
