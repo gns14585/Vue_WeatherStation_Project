@@ -12,12 +12,15 @@ import {
   faLocationDot,
   faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
-import store from "./store/store.js";
+import { createPinia } from "pinia";
 
 // 아이콘 등록하기
 library.add(faBarsStaggered, faLocationDot, faMagnifyingGlass);
 
+// pinia 객체를 가져와 변수에 할당
+const pinia = createPinia();
+
 createApp(App)
-  .use(store)
+  .use(pinia)
   .component("font-awesome-icon", FontAwesomeIcon)
   .mount("#app");
