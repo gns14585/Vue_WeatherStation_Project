@@ -14,6 +14,7 @@ export default createStore({
       location: "location",
       city: "Seoul",
     },
+    toggle: false, // true일때 about 보여주기
   },
   mutations: {
     // mutations(데이터 변경)
@@ -31,6 +32,10 @@ export default createStore({
 
     onSearchCity(state, payload) {
       state.weatherData.city = payload;
+    },
+
+    toggleButton(state) {
+      state.toggle = !state.toggle;
     },
   },
 
